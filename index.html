@@ -13,104 +13,141 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-  .container{max-width:1100px;margin:0 auto;padding:40px 24px;}
+  .container{max-width:1200px;margin:0 auto;padding:40px 24px;}
   h1{font-size:2.2rem;font-weight:700;letter-spacing:-0.03em;text-align:center;margin-bottom:6px;}
   h1 span{color:var(--accent2);}
   .subtitle{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:32px;}
+
   .campaign-specs{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:48px;}
   .campaign-specs h2{font-size:1.1rem;margin-bottom:16px;color:var(--accent2);}
-  .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+  .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
   .spec-item{background:var(--surface2);border-radius:8px;padding:12px 16px;}
   .spec-item .label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:2px;}
   .spec-item .value{font-size:0.9rem;font-weight:600;}
-  .status-bar{background:rgba(253,203,110,0.1);border:1px solid rgba(253,203,110,0.3);border-radius:8px;padding:14px 20px;margin-bottom:40px;display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--orange);}
-  .ad-review{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:32px;overflow:hidden;}
-  .ad-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-  .ad-header h3{font-size:1.1rem;font-weight:600;}
-  .ad-badges{display:flex;gap:6px;}
-  .badge{font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:16px;text-transform:uppercase;letter-spacing:0.04em;}
-  .badge.ang9{background:rgba(108,92,231,0.15);color:var(--ang9);}
-  .badge.ang10{background:rgba(0,184,148,0.15);color:var(--ang10);}
-  .badge.ang12{background:rgba(225,112,85,0.15);color:var(--ang12);}
-  .badge.ang14{background:rgba(253,203,110,0.15);color:var(--ang14);}
+
+  /* Angle Section */
+  .angle-section{margin-bottom:56px;}
+  .angle-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border);}
+  .angle-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;}
+  .angle-header h2{font-size:1.3rem;font-weight:700;}
+  .angle-header .angle-desc{color:var(--muted);font-size:0.85rem;margin-left:auto;}
+
+  /* Video Card */
+  .video-group{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden;}
+  .video-group-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .video-group-header h3{font-size:1rem;font-weight:600;}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;}
+  .badge{font-size:0.68rem;font-weight:700;padding:3px 9px;border-radius:14px;text-transform:uppercase;letter-spacing:0.04em;}
   .badge.short{background:rgba(116,185,255,0.15);color:var(--blue);}
-  .badge.medium{background:rgba(253,121,168,0.15);color:var(--pink);}
+  .badge.med{background:rgba(253,121,168,0.15);color:var(--pink);}
   .badge.alex{background:rgba(0,184,148,0.15);color:var(--green);}
-  .ad-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-  @media(max-width:800px){.ad-body{grid-template-columns:1fr;}}
-  .ad-video{padding:20px 24px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:12px;}
-  @media(max-width:800px){.ad-video{border-right:none;border-bottom:1px solid var(--border);}}
-  .ad-video video{width:100%;border-radius:8px;background:#000;}
-  .style-toggle{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid var(--border);}
-  .style-btn{flex:1;padding:8px 12px;background:var(--surface2);color:var(--muted);border:none;cursor:pointer;font-size:0.78rem;font-weight:600;text-align:center;transition:all 0.2s;}
-  .style-btn.active{background:var(--accent);color:#fff;}
-  .style-btn:hover:not(.active){background:var(--border);}
-  .no-toggle{font-size:0.75rem;color:var(--muted);text-align:center;padding:6px;background:var(--surface2);border-radius:6px;}
-  .ad-copy{padding:20px 24px;display:flex;flex-direction:column;gap:16px;}
-  .copy-section-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:600;margin-bottom:4px;}
-  .headline-rec{font-size:1rem;font-weight:700;line-height:1.4;color:var(--accent2);margin-bottom:4px;}
-  .headlines-all{font-size:0.82rem;color:var(--muted);line-height:1.6;}
-  .headlines-all li{margin-bottom:4px;}
-  .primary-text{background:var(--surface2);border-radius:8px;padding:14px;font-size:0.85rem;line-height:1.65;white-space:pre-wrap;max-height:400px;overflow-y:auto;}
-  .ad-meta-row{display:flex;gap:16px;flex-wrap:wrap;font-size:0.78rem;color:var(--muted);}
-  .ad-meta-row span{background:var(--surface2);padding:4px 10px;border-radius:6px;}
-  .approval{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:48px;text-align:center;}
-  .approval h2{font-size:1.2rem;margin-bottom:12px;}
-  .approval p{color:var(--muted);font-size:0.9rem;}
+  .badge.ela{background:rgba(162,155,254,0.12);color:var(--accent2);}
+  .badge.hmz{background:rgba(253,203,110,0.12);color:var(--orange);}
+
+  .video-group-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  @media(max-width:850px){.video-group-body{grid-template-columns:1fr;}}
+
+  /* Video side */
+  .video-col{padding:20px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:10px;}
+  @media(max-width:850px){.video-col{border-right:none;border-bottom:1px solid var(--border);}}
+  .video-col video{width:100%;border-radius:8px;background:#000;}
+
+  .toggle-row{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid var(--border);}
+  .toggle-btn{flex:1;padding:7px 10px;background:var(--surface2);color:var(--muted);border:none;cursor:pointer;font-size:0.75rem;font-weight:600;text-align:center;transition:all 0.15s;}
+  .toggle-btn.active{background:var(--accent);color:#fff;}
+  .toggle-btn:hover:not(.active){background:var(--border);}
+  .no-toggle{font-size:0.72rem;color:var(--muted);text-align:center;padding:5px;background:var(--surface2);border-radius:6px;}
+
+  /* Copy side */
+  .copy-col{padding:20px;display:flex;flex-direction:column;gap:14px;}
+  .copy-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:600;margin-bottom:2px;}
+  .headline-main{font-size:0.95rem;font-weight:700;line-height:1.4;color:var(--accent2);}
+  .headlines-list{font-size:0.8rem;color:var(--muted);line-height:1.5;padding-left:16px;}
+  .headlines-list li{margin-bottom:3px;}
+
+  /* A/B copy toggle */
+  .copy-toggle{display:flex;gap:0;border-radius:6px;overflow:hidden;border:1px solid var(--border);align-self:flex-start;}
+  .copy-toggle-btn{padding:5px 14px;background:var(--surface2);color:var(--muted);border:none;cursor:pointer;font-size:0.72rem;font-weight:600;transition:all 0.15s;}
+  .copy-toggle-btn.active{background:var(--green);color:#fff;}
+  .copy-toggle-btn:hover:not(.active){background:var(--border);}
+
+  .primary-text{background:var(--surface2);border-radius:8px;padding:12px;font-size:0.82rem;line-height:1.6;white-space:pre-wrap;max-height:350px;overflow-y:auto;}
+  .copy-hidden{display:none;}
+
+  .meta-row{display:flex;gap:12px;flex-wrap:wrap;font-size:0.75rem;color:var(--muted);}
+  .meta-row span{background:var(--surface2);padding:3px 8px;border-radius:5px;}
+
+  .footer{text-align:center;color:var(--muted);font-size:0.72rem;padding-top:40px;border-top:1px solid var(--border);margin-top:40px;}
 </style>
 <script>
-function switchStyle(adId, style) {
-  const video = document.getElementById('video-' + adId);
-  const ellaBtn = document.getElementById(adId + '-ella');
-  const hormoziBtn = document.getElementById(adId + '-hormozi');
+function switchVideo(groupId, style) {
+  const vid = document.getElementById('vid-' + groupId);
+  const ellaBtn = document.getElementById(groupId + '-ella');
+  const hmzBtn = document.getElementById(groupId + '-hmz');
   if (style === 'ella') {
-    video.src = 'videos/' + adId + '_ella.mp4';
-    ellaBtn.classList.add('active');
-    hormoziBtn.classList.remove('active');
+    vid.src = 'videos/' + groupId + '_ella.mp4';
+    ellaBtn.classList.add('active'); hmzBtn.classList.remove('active');
   } else {
-    video.src = 'videos/' + adId + '_hormozi.mp4';
-    hormoziBtn.classList.add('active');
-    ellaBtn.classList.remove('active');
+    vid.src = 'videos/' + groupId + '_hormozi.mp4';
+    hmzBtn.classList.add('active'); ellaBtn.classList.remove('active');
   }
-  video.load();
+  vid.load();
+}
+function switchCopy(groupId, variant) {
+  const a = document.getElementById('copy-' + groupId + '-a');
+  const b = document.getElementById('copy-' + groupId + '-b');
+  const btnA = document.getElementById('copybtn-' + groupId + '-a');
+  const btnB = document.getElementById('copybtn-' + groupId + '-b');
+  if (variant === 'a') {
+    a.classList.remove('copy-hidden'); b.classList.add('copy-hidden');
+    btnA.classList.add('active'); btnB.classList.remove('active');
+  } else {
+    b.classList.remove('copy-hidden'); a.classList.add('copy-hidden');
+    btnB.classList.add('active'); btnA.classList.remove('active');
+  }
 }
 </script>
 </head>
 <body>
 <div class="container">
 
-<h1>Literacy Tree <span>LAB2</span> Ad Review</h1>
-<p class="subtitle">Review all copy, headlines, and video content before launch</p>
-<div class="status-bar">All ads will be created as PAUSED. Nothing goes live until you activate manually.</div>
+<h1>Literacy Tree <span>LAB2</span></h1>
+<p class="subtitle">34 Video Ads / 4 Angles / 2 Caption Styles / 2 Copy Variants</p>
 
 <div class="campaign-specs">
-  <h2>LAB2 Campaign Specs</h2>
+  <h2>Campaign Overview</h2>
   <div class="spec-grid">
-    <div class="spec-item"><div class="label">Campaign Name</div><div class="value">RU_PRO_SAPP_CBO_LAB2</div></div>
-    <div class="spec-item"><div class="label">Objective</div><div class="value">OUTCOME_LEADS</div></div>
-    <div class="spec-item"><div class="label">Conversion Event</div><div class="value">SubmitApplication</div></div>
-    <div class="spec-item"><div class="label">Daily Budget</div><div class="value">$50/day CBO</div></div>
-    <div class="spec-item"><div class="label">Bid Strategy</div><div class="value">LOWEST_COST_WITHOUT_CAP</div></div>
-    <div class="spec-item"><div class="label">Ad Account</div><div class="value">act_256163309225391</div></div>
-    <div class="spec-item"><div class="label">Destination</div><div class="value">go.literacy-tree.com/step-1-optin</div></div>
-    <div class="spec-item"><div class="label">Targeting</div><div class="value">USA | 25+ | Broad</div></div>
-    <div class="spec-item"><div class="label">Total Ads</div><div class="value">12 video ads</div></div>
-    <div class="spec-item"><div class="label">Status on Create</div><div class="value">PAUSED</div></div>
+    <div class="spec-item"><div class="label">Campaign</div><div class="value">C_002_RU_LAB2</div></div>
+    <div class="spec-item"><div class="label">Conversion</div><div class="value">Submit Application</div></div>
+    <div class="spec-item"><div class="label">Daily Budget</div><div class="value">$100/day</div></div>
+    <div class="spec-item"><div class="label">Targeting</div><div class="value">USA, 25+, Broad</div></div>
+    <div class="spec-item"><div class="label">Total Ads</div><div class="value">34</div></div>
+    <div class="spec-item"><div class="label">Status</div><div class="value">PAUSED</div></div>
   </div>
 </div>
 
-<!-- AD_025 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_025 — Desperate Mom Scrolling</h3><div class="ad-badges"><span class="badge ang9">Angle 9</span><span class="badge short">Short ~43s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" src="videos/VID_025_captioned.mp4"></video>
-      <div class="no-toggle">Existing captions (no style variants)</div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"She Found Us on Facebook at Midnight. Her Son Is Reading at Grade Level Now."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li>"If You're Scrolling Right Now Looking for Reading Help, Read This."</li><li><strong>"She Found Us on Facebook at Midnight. Her Son Is Reading at Grade Level Now."</strong></li><li>"A Desperate Mom Took a Chance on a Facebook Ad. Here's What Happened."</li><li>"You're Doing Exactly What She Did. Scrolling. Searching. Hoping."</li><li>"The Best Decision She Made for Her Son Started With a Late-Night Facebook Scroll."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">I was a desperate mom scrolling through Facebook, thinking to myself: what am I going to do next?
+<!-- ==================== ANGLE 9 ==================== -->
+<div class="angle-section">
+  <div class="angle-header">
+    <div class="angle-dot" style="background:var(--ang9)"></div>
+    <h2>Angle 9: "The Desperate Mom Scrolling Facebook"</h2>
+    <span class="angle-desc">Mirror + Confession + Caples Arc</span>
+  </div>
+
+  <!-- VID_027 - Ang9 Med -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Three Parents, Same Story</h3><div class="badges"><span class="badge med">Medium ~96s</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_027" src="videos/VID_027_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_027-ella" onclick="switchVideo('VID_027','ella')">Ella</button><button class="toggle-btn" id="VID_027-hmz" onclick="switchVideo('VID_027','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"Three Parents Found Us Scrolling Facebook Late at Night. All Three Kids Are Reading at Grade Level Now."</div>
+        <div><div class="copy-label">All Headlines</div><ol class="headlines-list"><li>"If You're Scrolling Right Now Looking for Reading Help, Read This."</li><li><strong>"Three Parents Found Us Scrolling Facebook Late at Night..."</strong></li><li>"'His Dad Said It's Probably Just a Scam.' Here's What Actually Happened."</li><li>"Every Parent Who Found Us Said the Same Thing: 'I Almost Didn't Click.'"</li><li>"The Facebook Ad That Changed Her Son's Reading Scores by 59 Points"</li></ol></div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang9med-a" onclick="switchCopy('ang9med','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang9med-b" onclick="switchCopy('ang9med','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang9med-a">I was a desperate mom scrolling through Facebook, thinking to myself: what am I going to do next?
 
 That's how one parent found us.
 
@@ -118,26 +155,8 @@ Her son had been reading below grade level for three years. Apps didn't work. Tu
 
 She took a chance on us anyway. Twelve weeks later, his scores went up an entire standard deviation.
 
-If you're scrolling right now looking for answers, talk with a reading specialist. 30 minutes. No cost. Just real answers about your child's reading.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. Results may vary.</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- AD_027 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_027 — Three Parents, Same Story</h3><div class="ad-badges"><span class="badge ang9">Angle 9</span><span class="badge medium">Medium ~96s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_027" src="videos/VID_027_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_027-ella" onclick="switchStyle('VID_027','ella')">Ella</button><button class="style-btn" id="VID_027-hormozi" onclick="switchStyle('VID_027','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"Three Parents Found Us Scrolling Facebook Late at Night. All Three Kids Are Reading at Grade Level Now."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"Three Parents Found Us Scrolling Facebook Late at Night. All Three Kids Are Reading at Grade Level Now."</strong></li><li>"It's 10pm. You're Scrolling. Your Child Can't Read at Grade Level. Read This."</li><li>"'His Dad Said It's Probably Just a Scam.' Here's What Actually Happened."</li><li>"Every Parent Who Found Us Said the Same Thing: 'I Almost Didn't Click.'"</li><li>"The Facebook Ad That Changed Her Son's Reading Scores by 59 Points"</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">It's 10pm. You're on the couch. The kids are in bed. And you're scrolling through Facebook looking for something, anything, that might help your child with reading.
+If you're scrolling right now looking for answers, talk with a reading specialist. 30 minutes. No cost. Just real answers about your child's reading.</div>
+        <div class="primary-text copy-hidden" id="copy-ang9med-b">It's 10pm. You're on the couch. The kids are in bed. And you're scrolling through Facebook looking for something, anything, that might help your child with reading.
 
 I know. Because three parents in our program described finding us the exact same way.
 
@@ -155,26 +174,98 @@ Literacy Tree's certified reading specialists use this method in small groups of
 
 You don't need to believe in us tonight. You just need to talk with a reading specialist for 30 minutes and get actual answers about your child's reading gaps. No cost. No obligation.
 
-If you're scrolling right now, you already know something needs to change.
+If you're scrolling right now, you already know something needs to change.</div>
+        <div class="meta-row"><span>CTA: Sign Up</span></div>
+      </div>
+    </div>
+  </div>
 
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Sign Up</span><span>Description: Talk with a certified reading specialist. 30 minutes. Real answers. No obligation.</span></div>
+  <!-- VID_025 - Ang9 Short (existing subs) -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Desperate Mom Short</h3><div class="badges"><span class="badge short">Short ~43s</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" src="videos/VID_025_captioned.mp4"></video>
+        <div class="no-toggle">Existing captions</div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"She Found Us on Facebook at Midnight. Her Son Is Reading at Grade Level Now."</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang9short-a" onclick="switchCopy('ang9short','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang9short-b" onclick="switchCopy('ang9short','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang9short-a">I was a desperate mom scrolling through Facebook, thinking to myself: what am I going to do next?
+
+That's how one parent found us.
+
+Her son had been reading below grade level for three years. Apps didn't work. Tutoring didn't stick. The school kept saying "keep making him read."
+
+She took a chance on us anyway. Twelve weeks later, his scores went up an entire standard deviation.
+
+If you're scrolling right now looking for answers, talk with a reading specialist. 30 minutes. No cost. Just real answers about your child's reading.</div>
+        <div class="primary-text copy-hidden" id="copy-ang9short-b">It's 10pm. You're on the couch. The kids are in bed. And you're scrolling through Facebook looking for something, anything, that might help your child with reading.
+
+I know. Because three parents in our program described finding us the exact same way.
+
+One said: "I was a desperate mom scrolling through Facebook, thinking to myself, what am I going to do next?"
+
+Another said: "I am a non-believer in stuff on the internet. But I was like, let me just give her a chance."
+
+A third: "His dad said it's probably just a scam. And I was like, well, we got to try something."
+
+All three of their children are now reading at or above grade level.
+
+If you're scrolling right now, you already know something needs to change. Talk with a reading specialist. 30 minutes. No cost. No obligation.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VID_051 - Alexandria Ang9 -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Alexandria: Scrolling Instagram</h3><div class="badges"><span class="badge short">Short ~30s</span><span class="badge alex">Alexandria</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_051" src="videos/VID_051_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_051-ella" onclick="switchVideo('VID_051','ella')">Ella</button><button class="toggle-btn" id="VID_051-hmz" onclick="switchVideo('VID_051','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"She Saw an Ad on Instagram. Signed Up the Same Day. Her Daughter Reads at Grade Level Now."</div>
+        <div class="primary-text">"I was just scrolling on Instagram and I seen one of your ads. And when I was seeing the parents testimonials, that's really what drew me to this."
+
+"I don't even think I was looking for anything for her. And I was just like, oh wow. I need to check this out."
+
+"I signed up the very same day."
+
+Her daughter now reads at grade level. It just all clicks.
+
+If you're scrolling right now, talk with a reading specialist. 30 minutes. Free.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- AD_029 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_029 — War With Books</h3><div class="ad-badges"><span class="badge ang10">Angle 10</span><span class="badge short">Short ~47s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_029" src="videos/VID_029_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_029-ella" onclick="switchStyle('VID_029','ella')">Ella</button><button class="style-btn" id="VID_029-hormozi" onclick="switchStyle('VID_029','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"'I Was in a War With Books.' 12 Weeks Later: 'I Could Win the War.'"</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"'I Was in a War With Books.' 12 Weeks Later: 'I Could Win the War.'"</strong></li><li>"A Child's Own Words About What It Feels Like to Struggle With Reading"</li><li>"His Mom Cried When He Said It. Here's What 12 Weeks Changed."</li><li>"Before: 'I Was in a War With Books.' After: Chapter Books on the Couch."</li><li>"The Words That Made His Mom Cry Came From a 9-Year-Old Who Couldn't Read"</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">"It felt like I was in a war with books."
+<!-- ==================== ANGLE 10 ==================== -->
+<div class="angle-section">
+  <div class="angle-header">
+    <div class="angle-dot" style="background:var(--ang10)"></div>
+    <h2>Angle 10: "War With Books"</h2>
+    <span class="angle-desc">Child's Own Words</span>
+  </div>
+
+  <!-- VID_029 - Ang10 Short -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>War With Books</h3><div class="badges"><span class="badge short">Short ~47s</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_029" src="videos/VID_029_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_029-ella" onclick="switchVideo('VID_029','ella')">Ella</button><button class="toggle-btn" id="VID_029-hmz" onclick="switchVideo('VID_029','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"'I Was in a War With Books.' 12 Weeks Later: 'I Could Win the War.'"</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang10short-a" onclick="switchCopy('ang10short','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang10short-b" onclick="switchCopy('ang10short','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang10short-a">"It felt like I was in a war with books."
 
 That's a real kid describing what reading was like before he started our program.
 
@@ -184,24 +275,8 @@ That's a real kid describing what reading was like before he started our program
 
 No copywriter wrote that. A child did. And his mom cried when he said it.
 
-If your child is fighting that same war, talk with a reading specialist.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. Results may vary.</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- AD_031 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_031 — A Boy Named Lynn</h3><div class="ad-badges"><span class="badge ang10">Angle 10</span><span class="badge medium">Medium ~81s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_031" src="videos/VID_031_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_031-ella" onclick="switchStyle('VID_031','ella')">Ella</button><button class="style-btn" id="VID_031-hormozi" onclick="switchStyle('VID_031','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"'I'm Not Going to Be Able to Be a Good Reader.' That Was Before."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"'I'm Not Going to Be Able to Be a Good Reader.' That Was Before."</strong></li><li>"A 1.9 Reading Level in Fourth Grade. Here's What 12 Weeks Changed."</li><li>"His Mom Couldn't Hold It Together. Neither Could I. Here's Why."</li><li>"He Said He Was in a War With Books. 12 Weeks Later, He Won."</li><li>"The Part That Matters More Than the Test Scores"</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">I want to tell you about a boy named Lynn.
+If your child is fighting that same war, talk with a reading specialist.</div>
+        <div class="primary-text copy-hidden" id="copy-ang10short-b">I want to tell you about a boy named Lynn.
 
 When I asked Lynn how reading felt before he started with us, he said something I'll never forget:
 
@@ -213,32 +288,83 @@ When a child says "I'm not going to be able to be a good reader," that's not fru
 
 In 12 weeks, Lynn went from a 1.9 reading level to 3.9-4.2. Grade level.
 
-When I asked Lynn how reading felt now, he said:
-
-"Now I feel like I could win the war."
+When I asked Lynn how reading felt now, he said: "Now I feel like I could win the war."
 
 His mom couldn't hold it together. I couldn't either, honestly.
 
-If your child is fighting that same war, a reading specialist can tell you in 30 minutes whether our program is the right fit. No cost. No obligation. Just real answers.
+If your child is fighting that same war, a reading specialist can tell you in 30 minutes whether our program is the right fit. No cost. No obligation. Just real answers.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
+    </div>
+  </div>
 
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Sign Up</span><span>Description: Certified reading specialists. Structured Literacy. Small groups. 12 weeks.</span></div>
+  <!-- VID_031 - Ang10 Med -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>A Boy Named Lynn</h3><div class="badges"><span class="badge med">Medium ~81s</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_031" src="videos/VID_031_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_031-ella" onclick="switchVideo('VID_031','ella')">Ella</button><button class="toggle-btn" id="VID_031-hmz" onclick="switchVideo('VID_031','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"'I'm Not Going to Be Able to Be a Good Reader.' That Was Before."</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang10med-a" onclick="switchCopy('ang10med','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang10med-b" onclick="switchCopy('ang10med','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang10med-a">"It felt like I was in a war with books."
+
+That's a real kid describing what reading was like before he started our program.
+
+12 weeks later, same kid:
+
+"Now I feel like I could win the war."
+
+No copywriter wrote that. A child did. And his mom cried when he said it.
+
+If your child is fighting that same war, talk with a reading specialist.</div>
+        <div class="primary-text copy-hidden" id="copy-ang10med-b">I want to tell you about a boy named Lynn.
+
+When I asked Lynn how reading felt before he started with us, he said something I'll never forget:
+
+"It felt like I was in a war with books."
+
+He was in fourth grade. Reading at a 1.9 level. His mom, Heather, described the daily reality: he kept saying "I don't like to read. I don't want to read. I'm not going to be able to be a good reader."
+
+When a child says "I'm not going to be able to be a good reader," that's not frustration. That's surrender.
+
+In 12 weeks, Lynn went from a 1.9 reading level to 3.9-4.2. Grade level.
+
+When I asked Lynn how reading felt now, he said: "Now I feel like I could win the war."
+
+His mom couldn't hold it together. I couldn't either, honestly.
+
+If your child is fighting that same war, a reading specialist can tell you in 30 minutes whether our program is the right fit. No cost. No obligation. Just real answers.</div>
+        <div class="meta-row"><span>CTA: Sign Up</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- AD_037 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_037 — 45 Minutes to Read Five Sentences</h3><div class="ad-badges"><span class="badge ang12">Angle 12</span><span class="badge short">Short ~42s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" src="videos/VID_037_captioned.mp4"></video>
-      <div class="no-toggle">Existing captions (no style variants)</div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"45 Minutes to Read Five Sentences. You Know This Scene."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"45 Minutes to Read Five Sentences. You Know This Scene."</strong></li><li>"You Were Never Supposed to Be Your Child's Reading Teacher."</li><li>"The Homework Table Shouldn't Be a Battlefield."</li><li>"When Reading Homework Takes 45 Minutes and Ends in Tears for Both of You"</li><li>"Your Job Is to Be the Parent. Not the Reading Teacher."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">45 minutes to read five sentences.
+<!-- ==================== ANGLE 12 ==================== -->
+<div class="angle-section">
+  <div class="angle-header">
+    <div class="angle-dot" style="background:var(--ang12)"></div>
+    <h2>Angle 12: "45 Minutes to Read Five Sentences"</h2>
+    <span class="angle-desc">Homework Table War</span>
+  </div>
+
+  <!-- VID_037 - Ang12 Short (existing subs) -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>45 Minutes</h3><div class="badges"><span class="badge short">Short ~42s</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" src="videos/VID_037_captioned.mp4"></video>
+        <div class="no-toggle">Existing captions</div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"45 Minutes to Read Five Sentences. You Know This Scene."</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang12short-a" onclick="switchCopy('ang12short','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang12short-b" onclick="switchCopy('ang12short','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang12short-a">45 minutes to read five sentences.
 
 That's what one mom described. Sitting next to her son, both of them frustrated, neither of them learning anything.
 
@@ -248,26 +374,8 @@ No. You can't. Because you were never supposed to be your child's reading teache
 
 A certified reading specialist's job is to close the reading gap. Your job is to be the parent who watches them succeed.
 
-Talk with a reading specialist.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. From home.</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- AD_039 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_039 — The Homework Table War</h3><div class="ad-badges"><span class="badge ang12">Angle 12</span><span class="badge medium">Medium ~102s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_039" src="videos/VID_039_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_039-ella" onclick="switchStyle('VID_039','ella')">Ella</button><button class="style-btn" id="VID_039-hormozi" onclick="switchStyle('VID_039','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"You Were Never Supposed to Be Your Child's Reading Teacher. Here's Who Should Be."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"You Were Never Supposed to Be Your Child's Reading Teacher. Here's Who Should Be."</strong></li><li>"45 Minutes. Five Sentences. Two People in Tears. Sound Familiar?"</li><li>"The Reading Problem That's Actually a Relationship Problem"</li><li>"'He Doesn't Fight Me Anymore.' What Changed After 12 Weeks."</li><li>"Every Sigh. Every Pause. Every 'Just Try.' Your Child Feels All of It."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">You know the scene.
+Talk with a reading specialist.</div>
+        <div class="primary-text copy-hidden" id="copy-ang12short-b">You know the scene.
 
 Your child sits down with a book. You sit next to them. It starts fine.
 
@@ -291,26 +399,110 @@ After 12 weeks, parents describe the same shift:
 "She started raising her hand in class."
 "He reads entire books now. He tries. He doesn't get angry."
 
-Talk with a reading specialist. 30 minutes. No cost.
+Talk with a reading specialist. 30 minutes. No cost.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
+    </div>
+  </div>
 
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Sign Up</span><span>Description: Certified reading specialists. Small groups. Structured Literacy. 12 weeks.</span></div>
+  <!-- VID_039 - Ang12 Med -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>The Homework Table War</h3><div class="badges"><span class="badge med">Medium ~102s</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_039" src="videos/VID_039_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_039-ella" onclick="switchVideo('VID_039','ella')">Ella</button><button class="toggle-btn" id="VID_039-hmz" onclick="switchVideo('VID_039','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"You Were Never Supposed to Be Your Child's Reading Teacher. Here's Who Should Be."</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang12med-a" onclick="switchCopy('ang12med','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang12med-b" onclick="switchCopy('ang12med','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang12med-a">45 minutes to read five sentences.
+
+That's what one mom described. Sitting next to her son, both of them frustrated, neither of them learning anything.
+
+You were never supposed to be your child's reading teacher. That's not a failure. That's just not your job.
+
+A certified reading specialist's job is to close the reading gap. Your job is to be the parent who watches them succeed.
+
+Talk with a reading specialist.</div>
+        <div class="primary-text copy-hidden" id="copy-ang12med-b">You know the scene.
+
+Your child sits down with a book. You sit next to them. It starts fine.
+
+Then: "The... b-boy... w-went..."
+
+You wait. You try not to show frustration. They see it anyway.
+
+"I can't do this."
+"Yes you can, honey. Sound it out."
+"I HATE reading."
+
+Forty-five minutes later, they've read five sentences. Both of you are exhausted. The book is closed. You feel guilty for getting frustrated. They feel stupid for struggling. Nobody learned anything.
+
+This isn't a reading problem. This is a relationship problem disguised as a reading problem.
+
+A certified reading specialist doesn't carry that weight. They teach Structured Literacy, the method 44 states now require, in small groups of 4-6 kids at the same level.
+
+After 12 weeks, parents describe the same shift:
+
+"He doesn't fight me to do it anymore."
+"She started raising her hand in class."
+"He reads entire books now. He tries. He doesn't get angry."
+
+Talk with a reading specialist. 30 minutes. No cost.</div>
+        <div class="meta-row"><span>CTA: Sign Up</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VID_050 - Alexandria Ang12 -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Alexandria: Watch Me Read</h3><div class="badges"><span class="badge short">Short ~45s</span><span class="badge alex">Alexandria</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_050" src="videos/VID_050_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_050-ella" onclick="switchVideo('VID_050','ella')">Ella</button><button class="toggle-btn" id="VID_050-hmz" onclick="switchVideo('VID_050','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"'Mom, Can You Sit Here and Watch Me Read?' The Moment Every Parent Wants."</div>
+        <div class="primary-text">"She'll call me in the room and she'll say, 'Mom, can you sit here and watch me read?'"
+
+"She's knowing, okay, I'm going to read it three times because by the third time, my time is going to be all the way down."
+
+"It's just become something fun for us. It's brought us closer. It doesn't even feel like school. It just feels like fun to her."
+
+That's what happens when a certified reading specialist closes the gap. Reading stops being a fight and starts being something your child chooses.
+
+Talk with a reading specialist. 30 minutes. Free.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- AD_045 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_045 — Something Clicked</h3><div class="ad-badges"><span class="badge ang14">Angle 14</span><span class="badge short">Short ~49s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" src="videos/VID_045_captioned.mp4"></video>
-      <div class="no-toggle">Existing captions (no style variants)</div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"'Something Clicked. And Now He Gets It.' What 12 Weeks Sounds Like."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"'Something Clicked. And Now He Gets It.' What 12 Weeks Sounds Like."</strong></li><li>"The Moment It Clicked: He Explained a Phonics Rule to His Mom."</li><li>"It Didn't Happen Gradually. It Exploded."</li><li>"Every Parent Is Waiting for the Click. Here's What Causes It."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">"It just seemed like over the last month, it just exploded for him. It's like something clicked. And now he gets it."
+<!-- ==================== ANGLE 14 ==================== -->
+<div class="angle-section">
+  <div class="angle-header">
+    <div class="angle-dot" style="background:var(--ang14)"></div>
+    <h2>Angle 14: "Something Clicked"</h2>
+    <span class="angle-desc">The Transformation Moment</span>
+  </div>
+
+  <!-- VID_045 - Ang14 Short (existing subs) -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Something Clicked</h3><div class="badges"><span class="badge short">Short ~49s</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" src="videos/VID_045_captioned.mp4"></video>
+        <div class="no-toggle">Existing captions</div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"'Something Clicked. And Now He Gets It.' What 12 Weeks Sounds Like."</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang14short-a" onclick="switchCopy('ang14short','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang14short-b" onclick="switchCopy('ang14short','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang14short-a">"It just seemed like over the last month, it just exploded for him. It's like something clicked. And now he gets it."
 
 "He was reading a book the other day and one of the words was 'watch.' And he was like, 'Yeah, sometimes when there's a TCH together, it makes a chuh sound.' And I'm like..."
 
@@ -318,26 +510,8 @@ That's the click. That's what 12 weeks of Structured Literacy with a certified r
 
 Not "improvement." Not "progress." A child who suddenly understands how reading works.
 
-Talk with a reading specialist.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. Results may vary.</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- AD_047 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_047 — Five Families, Same Click</h3><div class="ad-badges"><span class="badge ang14">Angle 14</span><span class="badge medium">Medium ~90s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_047" src="videos/VID_047_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_047-ella" onclick="switchStyle('VID_047','ella')">Ella</button><button class="style-btn" id="VID_047-hormozi" onclick="switchStyle('VID_047','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"Every Parent Describes It the Same Way: 'Something Clicked.'"</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"Every Parent Describes It the Same Way: 'Something Clicked.'"</strong></li><li>"'It's Not That Difficult Anymore.' A Child's Words After 12 Weeks."</li><li>"The Click Isn't Magic. It's a Specific Method. Here's How It Works."</li><li>"Stop Waiting for the Click. Start Working With Someone Who Can Cause It."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">I keep hearing the same word from parents: "clicked."
+Talk with a reading specialist.</div>
+        <div class="primary-text copy-hidden" id="copy-ang14short-b">I keep hearing the same word from parents: "clicked."
 
 "It's like something clicked for him. And now he gets it."
 
@@ -351,26 +525,63 @@ Here's what causes the click: Structured Literacy. The child stops guessing and 
 
 Literacy Tree's certified reading specialists deliver Structured Literacy in small groups of 4-6 kids at the same level. Two sessions per week. 12 weeks. From home.
 
-If you're still waiting for the click, talk with a reading specialist. 30 minutes. No cost.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Sign Up</span><span>Description: Certified reading specialists. Structured Literacy. Small groups. 12 weeks.</span></div>
+If you're still waiting for the click, talk with a reading specialist. 30 minutes. No cost.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- AD_049 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_049 — Alexandria: It All Clicks Now</h3><div class="ad-badges"><span class="badge ang14">Angle 14</span><span class="badge alex">Alexandria</span><span class="badge short">Short ~40s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_049" src="videos/VID_049_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_049-ella" onclick="switchStyle('VID_049','ella')">Ella</button><button class="style-btn" id="VID_049-hormozi" onclick="switchStyle('VID_049','hormozi')">Hormozi</button></div>
+  <!-- VID_047 - Ang14 Med -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Five Families, Same Click</h3><div class="badges"><span class="badge med">Medium ~90s</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_047" src="videos/VID_047_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_047-ella" onclick="switchVideo('VID_047','ella')">Ella</button><button class="toggle-btn" id="VID_047-hmz" onclick="switchVideo('VID_047','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"Every Parent Describes It the Same Way: 'Something Clicked.'"</div>
+        <div class="copy-toggle"><button class="copy-toggle-btn active" id="copybtn-ang14med-a" onclick="switchCopy('ang14med','a')">Copy A (Short)</button><button class="copy-toggle-btn" id="copybtn-ang14med-b" onclick="switchCopy('ang14med','b')">Copy B (Long)</button></div>
+        <div class="primary-text" id="copy-ang14med-a">"It just seemed like over the last month, it just exploded for him. It's like something clicked. And now he gets it."
+
+That's the click. That's what 12 weeks of Structured Literacy with a certified reading specialist sounds like.
+
+Not "improvement." Not "progress." A child who suddenly understands how reading works.
+
+Talk with a reading specialist.</div>
+        <div class="primary-text copy-hidden" id="copy-ang14med-b">I keep hearing the same word from parents: "clicked."
+
+"It's like something clicked for him. And now he gets it."
+
+"He was reading a book and said: 'Yeah, sometimes when there's TCH together, it makes a chuh sound.' And I'm like... where did that come from?"
+
+"She started raising her hand and wanting to be called on. She definitely didn't want that before."
+
+"He doesn't say 'I can't do it' anymore. His teacher says 'we can do difficult things.' And he goes: 'It's not that difficult anymore.'"
+
+Here's what causes the click: Structured Literacy. The child stops guessing and starts decoding. And when decoding clicks, everything changes. Not gradually. Suddenly.
+
+Literacy Tree's certified reading specialists deliver Structured Literacy in small groups of 4-6 kids at the same level. Two sessions per week. 12 weeks. From home.
+
+If you're still waiting for the click, talk with a reading specialist. 30 minutes. No cost.</div>
+        <div class="meta-row"><span>CTA: Sign Up</span></div>
+      </div>
     </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"'It Just All Clicks Now.' A Mom's Words After 12 Weeks."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"'It Just All Clicks Now.' A Mom's Words After 12 Weeks."</strong></li><li>"Her Grades Got Better. Her Confidence Got Better. Everything Got Better."</li><li>"She Was Already There at the 6-Week Assessment."</li><li>"Boosted Confidence. Better Grades. One Program. 12 Weeks."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">"She's doing so well. She has made such an improvement with reading and it has just boosted confidence. Her grades have gotten better. Other subjects have gotten better."
+  </div>
+
+  <!-- VID_049 - Alexandria Ang14 -->
+  <div class="video-group">
+    <div class="video-group-header"><h3>Alexandria: It All Clicks Now</h3><div class="badges"><span class="badge short">Short ~40s</span><span class="badge alex">Alexandria</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_049" src="videos/VID_049_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_049-ella" onclick="switchVideo('VID_049','ella')">Ella</button><button class="toggle-btn" id="VID_049-hmz" onclick="switchVideo('VID_049','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"'It Just All Clicks Now.' A Mom's Words After 12 Weeks."</div>
+        <div class="primary-text">"She's doing so well. She has made such an improvement with reading and it has just boosted confidence. Her grades have gotten better. Other subjects have gotten better."
 
 "It just all clicks now."
 
@@ -378,80 +589,32 @@ That's a real mom describing what happened after her daughter completed 12 weeks
 
 At the 6-week assessment, she was already there.
 
-If your child is struggling with reading, talk with a specialist. 30 minutes. Free.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. Results may vary.</span></div>
+If your child is struggling with reading, talk with a specialist. 30 minutes. Free.</div>
+        <div class="meta-row"><span>CTA: Learn More</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- AD_050 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_050 — Alexandria: Watch Me Read</h3><div class="ad-badges"><span class="badge ang12">Angle 12</span><span class="badge alex">Alexandria</span><span class="badge short">Short ~45s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_050" src="videos/VID_050_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_050-ella" onclick="switchStyle('VID_050','ella')">Ella</button><button class="style-btn" id="VID_050-hormozi" onclick="switchStyle('VID_050','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"'Mom, Can You Sit Here and Watch Me Read?' The Moment Every Parent Wants."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"'Mom, Can You Sit Here and Watch Me Read?' The Moment Every Parent Wants."</strong></li><li>"Reading Went From a Fight to Something Fun. 12 Weeks."</li><li>"'It's Brought Us Closer.' What Happened When Reading Stopped Being Hard."</li><li>"It Doesn't Even Feel Like School. It Just Feels Like Fun."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">"She'll call me in the room and she'll say, 'Mom, can you sit here and watch me read?'"
-
-"She's knowing, okay, I'm going to read it three times because by the third time, my time is going to be all the way down."
-
-"It's just become something fun for us. It's brought us closer. It doesn't even feel like school. It just feels like fun to her."
-
-That's what happens when a certified reading specialist closes the gap. Reading stops being a fight and starts being something your child chooses.
-
-Talk with a reading specialist. 30 minutes. Free.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. From home.</span></div>
-    </div>
+<!-- ==================== ALEXANDRIA FULL ==================== -->
+<div class="angle-section">
+  <div class="angle-header">
+    <div class="angle-dot" style="background:var(--green)"></div>
+    <h2>Alexandria: Full Highlight</h2>
+    <span class="angle-desc">All angles in one video</span>
   </div>
-</div>
 
-<!-- AD_051 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_051 — Alexandria: Scrolling Instagram</h3><div class="ad-badges"><span class="badge ang9">Angle 9</span><span class="badge alex">Alexandria</span><span class="badge short">Short ~30s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_051" src="videos/VID_051_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_051-ella" onclick="switchStyle('VID_051','ella')">Ella</button><button class="style-btn" id="VID_051-hormozi" onclick="switchStyle('VID_051','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"She Saw an Ad on Instagram. Signed Up the Same Day. Her Daughter Reads at Grade Level Now."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"She Saw an Ad on Instagram. Signed Up the Same Day. Her Daughter Reads at Grade Level Now."</strong></li><li>"The Parent Testimonials Drew Her In. The Results Kept Her."</li><li>"'I Wasn't Even Looking for Anything. Then I Saw Your Ad.'"</li><li>"When a Facebook Ad Actually Delivers What It Promises"</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">"I was just scrolling on Instagram and I seen one of your ads. And when I was seeing the parents testimonials, that's really what drew me to this."
-
-"I don't even think I was looking for anything for her. And I was just like, oh wow. I need to check this out."
-
-"I signed up the very same day."
-
-Her daughter now reads at grade level. It just all clicks.
-
-If you're scrolling right now, talk with a reading specialist. 30 minutes. Free.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Learn More</span><span>Description: Certified reading specialists. Structured Literacy. 12 weeks. Results may vary.</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- AD_052 -->
-<div class="ad-review">
-  <div class="ad-header"><h3>AD_052 — Alexandria: Full Highlight</h3><div class="ad-badges"><span class="badge ang9">9</span><span class="badge ang12">12</span><span class="badge ang14">14</span><span class="badge alex">Alexandria</span><span class="badge medium">Medium ~90s</span></div></div>
-  <div class="ad-body">
-    <div class="ad-video">
-      <video controls preload="metadata" id="video-VID_052" src="videos/VID_052_ella.mp4"></video>
-      <div class="style-toggle"><button class="style-btn active" id="VID_052-ella" onclick="switchStyle('VID_052','ella')">Ella</button><button class="style-btn" id="VID_052-hormozi" onclick="switchStyle('VID_052','hormozi')">Hormozi</button></div>
-    </div>
-    <div class="ad-copy">
-      <div><div class="copy-section-label">Recommended Headline</div><div class="headline-rec">"She Found Us on Instagram. Her Daughter Now Asks to Be Watched While She Reads."</div></div>
-      <div><div class="copy-section-label">All Headlines</div><ol class="headlines-all"><li><strong>"She Found Us on Instagram. Her Daughter Now Asks to Be Watched While She Reads."</strong></li><li>"From Scrolling Instagram to 'Mom, Watch Me Read.' 12 Weeks."</li><li>"'It Just All Clicks Now.' One Mom's Full Journey From Ad to Results."</li><li>"The Ad She Almost Scrolled Past Changed Her Daughter's Confidence."</li></ol></div>
-      <div><div class="copy-section-label">Primary Text</div><div class="primary-text">"I was just scrolling on Instagram and I seen one of your ads. When I was seeing the parents testimonials, that's really what drew me to this. I signed up the very same day."
+  <div class="video-group">
+    <div class="video-group-header"><h3>Alexandria's Complete Story</h3><div class="badges"><span class="badge med">Medium ~90s</span><span class="badge alex">Alexandria</span><span class="badge ela">Ella</span><span class="badge hmz">Hormozi</span></div></div>
+    <div class="video-group-body">
+      <div class="video-col">
+        <video controls preload="metadata" id="vid-VID_052" src="videos/VID_052_ella.mp4"></video>
+        <div class="toggle-row"><button class="toggle-btn active" id="VID_052-ella" onclick="switchVideo('VID_052','ella')">Ella</button><button class="toggle-btn" id="VID_052-hmz" onclick="switchVideo('VID_052','hmz')">Hormozi</button></div>
+      </div>
+      <div class="copy-col">
+        <div class="copy-label">Headline</div>
+        <div class="headline-main">"She Found Us on Instagram. Her Daughter Now Asks to Be Watched While She Reads."</div>
+        <div class="primary-text">"I was just scrolling on Instagram and I seen one of your ads. When I was seeing the parents testimonials, that's really what drew me to this. I signed up the very same day."
 
 That's Alexandria. Her daughter Callie was struggling with reading.
 
@@ -465,17 +628,16 @@ After 12 weeks with a certified reading specialist:
 
 At the 6-week assessment, Callie was already at grade level.
 
-If your child is struggling with reading, talk with a specialist. 30 minutes. No cost. Real answers.
-
-*Individual results may vary.</div></div>
-      <div class="ad-meta-row"><span>CTA: Sign Up</span><span>Description: Talk with a reading specialist. 30 minutes. Free. Real answers. No obligation.</span></div>
+If your child is struggling with reading, talk with a specialist. 30 minutes. No cost. Real answers.</div>
+        <div class="meta-row"><span>CTA: Sign Up</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-
-<div style="text-align:center;color:var(--muted);font-size:0.75rem;padding-top:40px;border-top:1px solid var(--border);margin-top:40px;">
-  Literacy Tree LAB2 Campaign Review / Generated 2026-03-27 / Ad Account: act_256163309225391
+<div class="footer">
+  Literacy Tree LAB2 / 34 Ads / $100/day CBO / Submit Application / All PAUSED<br>
+  Generated 2026-03-28 / Reach Unleashed
 </div>
 
 </div>
